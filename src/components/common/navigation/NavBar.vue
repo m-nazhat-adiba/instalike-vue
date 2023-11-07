@@ -3,11 +3,13 @@ import { Icon } from '@iconify/vue'
 </script>
 
 <template>
-  <nav class="flex justify-between px-6 py-4 items-center">
-    <img src="../../../assets/logo.png" class="w-40 h-auto" />
-    <div class="text-lg flex gap-2">
-      <Icon icon="akar-icons:bell" />
-      <Icon icon="akar-icons:person" />
-    </div>
+  <nav
+    class="flex bg-white shadow-lg sticky bottom-0 justify-between w-full h-auto py-4 px-7 text-2xl"
+  >
+    <Icon icon="akar-icons:home-alt1" />
+    <Icon icon="akar-icons:search" />
+    <Icon icon="akar-icons:circle-plus" />
+    <Icon icon="akar-icons:video" />
+    <Icon icon="akar-icons:person" />
   </nav>
 </template>
