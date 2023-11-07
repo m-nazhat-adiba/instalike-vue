@@ -4,6 +4,7 @@ import PostCard from '../../components/timeline/postcard/PostCard.vue'
 import StoryCard from '../../components/timeline/story/StoryCard.vue'
 import { onMounted, ref } from 'vue'
 import axios from 'axios'
+import PostCardSkeleton from '../../components/timeline/postcard/PostCardSkeleton.vue'
 
 const postData = ref(null)
 
@@ -31,7 +32,15 @@ onMounted(fetchData)
     <!-- Story End -->
 
     <section class="flex flex-col gap-10 my-10">
-      <PostCard v-for="item in postData" v-bind:key="item.id" :title="item.title" :url="item.url" />
+      <PostCardSkeleton v-if="!postData" />
+      <PostCardSkeleton v-if="!postData" />
+      <PostCard
+        v-if="postData"
+        v-for="item in postData"
+        v-bind:key="item.id"
+        :title="item.title"
+        :url="item.url"
+      />
     </section>
   </Layout>
 </template>
