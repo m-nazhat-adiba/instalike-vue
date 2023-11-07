@@ -8,7 +8,7 @@ const handleLike = () => {
   isLiked.value = !isLiked.value
 }
 
-const props = defineProps({
+defineProps({
   title: String,
   url: String
 })
