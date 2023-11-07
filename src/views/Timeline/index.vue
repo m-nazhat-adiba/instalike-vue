@@ -8,7 +8,7 @@ import PostCardSkeleton from '../../components/timeline/postcard/PostCardSkeleto
 
 const postData = ref(null)
 
-const fetchData = async () => {
+const fetchPhoto = async () => {
   try {
     const response = await axios.get('https://jsonplaceholder.typicode.com/photos')
     postData.value = response.data
@@ -17,7 +17,9 @@ const fetchData = async () => {
   }
 }
 
-onMounted(fetchData)
+onMounted(() => {
+  fetchPhoto
+})
 </script>
 
 <template>
@@ -37,7 +39,7 @@ onMounted(fetchData)
       <PostCard
         v-if="postData"
         v-for="item in postData"
-        v-bind:key="item.id"
+        :key="item.id"
         :title="item.title"
         :url="item.url"
       />
